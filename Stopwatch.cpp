@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "Stopwatch.h"
 
 Stopwatch::Stopwatch()
@@ -5,18 +6,18 @@ Stopwatch::Stopwatch()
 
 }
 
-void Stopwatch::start(int length)
+void Stopwatch::start(unsigned long length)
 {
     threshold = length;
     StartTime = millis();
 }
 
-int Stopwatch::GetElapsed()
+unsigned long Stopwatch::GetElapsed()
 {
-    return (int)(millis() - StartTime);
+    return (millis() - StartTime);
 }
 
 bool Stopwatch::IsRunning()
 {
-    return GetElapsed > threshold;
+    return (GetElapsed() < threshold);
 }

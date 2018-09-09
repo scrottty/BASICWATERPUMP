@@ -13,21 +13,22 @@ Serial.println("Begin Test");
 
 void loop()
 {
-    if (Serial.available())
-    {
-        c = Serial.read();
+    pump.routine();
+    // if (Serial.available())
+    // {
+    //     c = Serial.read();
 
-        if( c == 'r')
-        {
-            pump.run();
-            Serial.println("pump on");
-        }
+    //     if( c == 'r')
+    //     {
+    //         pump.run();
+    //         Serial.println("pump on");
+    //     }
 
-        else if(c == 's')
-        {
-            pump.stop();
-            Serial.println("pump off");
-        }
-    }
-    delayMicroseconds(100);
+    //     else if(c == 's')
+    //     {
+    //         pump.stop();
+    //         Serial.println("pump off");
+    //     }
+    // }
+    // delayMicroseconds(100);
 }
